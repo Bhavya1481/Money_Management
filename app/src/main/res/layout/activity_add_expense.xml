@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddExpenseActivity"
+    android:background="#efd8f0">
+
+    <EditText
+        android:id="@+id/et_expense_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Expense Title"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_expense_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Total Amount"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_expense_title" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/et_expense_amount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp">
+
+        <RadioButton
+            android:id="@+id/rb_equal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Split Equally"/>
+
+        <RadioButton
+            android:id="@+id/rb_unequal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Split Unequally"/>
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/ll_unequal_split"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp">
+
+        <EditText
+            android:id="@+id/et_person1_amount"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="Amount for Person 1"
+            android:inputType="numberDecimal"/>
+
+        <EditText
+            android:id="@+id/et_person2_amount"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="Amount for Person 2"
+            android:inputType="numberDecimal"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_submit_expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit Expense"
+        app:layout_constraintTop_toBottomOf="@id/ll_unequal_split"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        android:textColor="@color/black"
+        android:background="@color/white"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
